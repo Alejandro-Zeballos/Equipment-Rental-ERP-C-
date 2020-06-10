@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F3393507-A0CA-44C3-84A4-478931840541}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Tools_Renting_System_Information</RootNamespace>
+    <AssemblyName>Tools Renting System Information</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.19.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.Grid.Base, Version=18.1460.0.54, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Grid.Base.18.1.0.54\lib\net46\Syncfusion.Grid.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Grid.Grouping.Windows, Version=18.1460.0.54, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Grid.Grouping.Windows.18.1.0.54\lib\net46\Syncfusion.Grid.Grouping.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Grid.Windows, Version=18.1460.0.54, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Grid.Windows.18.1.0.54\lib\net46\Syncfusion.Grid.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Grouping.Base, Version=18.1460.0.54, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Grouping.Base.18.1.0.54\lib\net46\Syncfusion.Grouping.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=18.1460.0.54, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.18.1.0.54\lib\net46\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Shared.Base, Version=18.1460.0.54, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Shared.Base.18.1.0.54\lib\net46\Syncfusion.Shared.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Shared.Windows, Version=18.1460.0.54, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Shared.Windows.18.1.0.54\lib\net46\Syncfusion.Shared.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SpellChecker.Base, Version=18.1460.0.54, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.SpellChecker.Base.18.1.0.54\lib\net46\Syncfusion.SpellChecker.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Tools.Base, Version=18.1460.0.54, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Tools.Base.18.1.0.54\lib\net46\Syncfusion.Tools.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Tools.Windows, Version=18.1460.0.54, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Tools.Windows.18.1.0.54\lib\net46\Syncfusion.Tools.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="model\database\DAOInterfaces\SucursalDAO.cs" />
+    <Compile Include="model\database\DAOs\MySqlSUcursalDAO.cs" />
+    <Compile Include="model\enums\eSucursal.cs" />
+    <Compile Include="model\pocos\Customer.cs" />
+    <Compile Include="model\database\DAOInterfaces\CustomerDAO.cs" />
+    <Compile Include="model\database\DAOs\MySqlCustomerDAO.cs" />
+    <Compile Include="model\database\DataSource.cs" />
+    <Compile Include="model\database\DAOInterfaces\EquipoDAO.cs" />
+    <Compile Include="model\database\DAOs\MySqlEquipoDAO.cs" />
+    <Compile Include="model\database\DAOInterfaces\EquipoRentedDAO.cs" />
+    <Compile Include="model\database\DAOs\MySqlRentedEquipoDAO.cs" />
+    <Compile Include="model\database\DAOInterfaces\SalesDAO.cs" />
+    <Compile Include="model\database\DAOInterfaces\UserDAO.cs" />
+    <Compile Include="model\database\DAOs\MySqlUserDAO.cs" />
+    <Compile Include="model\enums\Access.cs" />
+    <Compile Include="model\enums\eTypeEquipo.cs" />
+    <Compile Include="model\enums\Month.cs" />
+    <Compile Include="model\pocos\Equipo.cs" />
+    <Compile Include="model\pocos\RentedEquipo.cs" />
+    <Compile Include="model\pocos\Sales.cs" />
+    <Compile Include="model\pocos\Sucursal.cs" />
+    <Compile Include="model\pocos\User.cs" />
+    <Compile Include="presenter\AddCustomerPresenter.cs" />
+    <Compile Include="presenter\AddEquipoPresenter.cs" />
+    <Compile Include="presenter\AlquilarEquipoPresenter.cs" />
+    <Compile Include="presenter\AlquilarFormPresenter.cs" />
+    <Compile Include="presenter\SearchCustomerPresenter.cs" />
+    <Compile Include="view\IUcAlquilarForm.cs" />
+    <Compile Include="view\IUcAddEquipo.cs" />
+    <Compile Include="view\IUcAgregarCliente.cs" />
+    <Compile Include="view\IUcAlquilarEquipo.cs" />
+    <Compile Include="view\IUcSearchCustomer.cs" />
+    <Compile Include="view\userControl\UcAddCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\userControl\UcAddCustomer.Designer.cs">
+      <DependentUpon>UcAddCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\userControl\UcAddEquipo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\userControl\UcAddEquipo.Designer.cs">
+      <DependentUpon>UcAddEquipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\userControl\UcAlquilar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\userControl\UcAlquilar.Designer.cs">
+      <DependentUpon>UcAlquilar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\userControl\UcAlquilarForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\userControl\UcAlquilarForm.Designer.cs">
+      <DependentUpon>UcAlquilarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\userControl\UcItemEquipo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\userControl\UcItemEquipo.Designer.cs">
+      <DependentUpon>UcItemEquipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\userControl\UcHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\userControl\UcHome.Designer.cs">
+      <DependentUpon>UcHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\userControl\UcItemRented.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\userControl\UcItemRented.Designer.cs">
+      <DependentUpon>UcItemRented.cs</DependentUpon>
+    </Compile>
+    <Compile Include="model\Utils.cs" />
+    <Compile Include="presenter\HomePresenter.cs" />
+    <Compile Include="presenter\LoginPresenter.cs" />
+    <Compile Include="presenter\MainPresenter.cs" />
+    <Compile Include="presenter\RegisterPresenter.cs" />
+    <Compile Include="view\forms\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\forms\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="view\forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\forms\RegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\forms\RegisterForm.Designer.cs">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\ILogin.cs" />
+    <Compile Include="view\IRegister.cs" />
+    <Compile Include="view\IUcHome.cs" />
+    <Compile Include="view\userControl\UcSearchCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\userControl\UcSearchCustomer.Designer.cs">
+      <DependentUpon>UcSearchCustomer.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="view\userControl\UcAddCustomer.resx">
+      <DependentUpon>UcAddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\userControl\UcAddEquipo.resx">
+      <DependentUpon>UcAddEquipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\userControl\UcAlquilar.resx">
+      <DependentUpon>UcAlquilar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\userControl\UcAlquilarForm.resx">
+      <DependentUpon>UcAlquilarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\userControl\UcItemEquipo.resx">
+      <DependentUpon>UcItemEquipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\userControl\UcHome.resx">
+      <DependentUpon>UcHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\userControl\UcItemRented.resx">
+      <DependentUpon>UcItemRented.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="view\forms\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\forms\RegisterForm.resx">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\userControl\UcSearchCustomer.resx">
+      <DependentUpon>UcSearchCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="model\services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="model\resources\icons8-rain-64.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
