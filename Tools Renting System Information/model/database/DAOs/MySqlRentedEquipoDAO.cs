@@ -39,7 +39,29 @@ namespace Tools_Renting_System_Information.model.database
 
             MySqlDataReader data = dataSource.select(query);
 
-            if (data.Read())
+            while (data.Read())
+            {
+                RentedEquipo rentedEquipo = getRentedEquipo(data);
+                rentedEquipoList.Add(rentedEquipo);
+            }
+            if (data != null)
+                data.Close();
+
+            return rentedEquipoList;
+        }
+
+        public List<RentedEquipo> getRentedEquipoList(Customer customer)
+        {
+            List<RentedEquipo> rentedEquipoList = new List<RentedEquipo>();
+
+            DataSource dataSource = DataSource.instance;
+            string query = "SELECT * FROM items_rented " +
+                            $"WHERE id_customer = '{customer.id}' " +
+                            "AND is_returned = '1';";
+
+            MySqlDataReader data = dataSource.select(query);
+
+            while (data.Read())
             {
                 RentedEquipo rentedEquipo = getRentedEquipo(data);
                 rentedEquipoList.Add(rentedEquipo);
@@ -72,6 +94,31 @@ namespace Tools_Renting_System_Information.model.database
 
             return rentedEquipoList;
 
+        }
+
+        public List<RentedEquipo> getToReturnList(Customer customer)
+        {
+            List<RentedEquipo> rentedEquipoList = new List<RentedEquipo>();
+
+            DataSource dataSource = DataSource.instance;
+            string query = $"SELECT * FROM items_rented " +
+                            $"WHERE id_customer = '{customer.id}' " +
+                            $"AND is_returned = '0';";
+
+            MySqlDataReader data = dataSource.select(query);
+
+            while (data.Read())
+            {
+                RentedEquipo rentedEquipo = getRentedEquipo(data);
+
+                rentedEquipoList.Add(rentedEquipo);
+            }
+
+
+            if (data != null)
+                data.Close();
+
+            return rentedEquipoList;
         }
 
         public bool returnEquipo(int rentedEquipoId)
@@ -125,7 +172,5 @@ namespace Tools_Renting_System_Information.model.database
         }
     }
 
-    internal class DataTime
-    {
-    }
+
 }

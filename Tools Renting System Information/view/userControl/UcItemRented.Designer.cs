@@ -176,6 +176,7 @@
             this.labelCliente.Size = new System.Drawing.Size(61, 18);
             this.labelCliente.TabIndex = 9;
             this.labelCliente.Text = "Cliente:";
+            this.labelCliente.DoubleClick += new System.EventHandler(this.labelCliente_DoubleClick);
             // 
             // labelUsuario
             // 

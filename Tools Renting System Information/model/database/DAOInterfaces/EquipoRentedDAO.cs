@@ -13,5 +13,7 @@ namespace Tools_Renting_System_Information.model.database
         RentedEquipo getRentedEquipo(int id);
         List<RentedEquipo> getToReturnList();
         bool returnEquipo(int rentedEquipoId);
+        List<RentedEquipo> getToReturnList(Customer customer);
+        List<RentedEquipo> getRentedEquipoList(Customer customer);
     }
 }

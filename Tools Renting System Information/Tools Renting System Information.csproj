@@ -112,11 +112,19 @@
     <Compile Include="presenter\AddEquipoPresenter.cs" />
     <Compile Include="presenter\AlquilarEquipoPresenter.cs" />
     <Compile Include="presenter\AlquilarFormPresenter.cs" />
+    <Compile Include="presenter\CustomerDetailsPresenter.cs" />
     <Compile Include="presenter\SearchCustomerPresenter.cs" />
+    <Compile Include="view\forms\ItemDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\forms\ItemDetailForm.Designer.cs">
+      <DependentUpon>ItemDetailForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\IUcAlquilarForm.cs" />
     <Compile Include="view\IUcAddEquipo.cs" />
     <Compile Include="view\IUcAgregarCliente.cs" />
     <Compile Include="view\IUcAlquilarEquipo.cs" />
+    <Compile Include="view\IUcCustomerDetails.cs" />
     <Compile Include="view\IUcSearchCustomer.cs" />
     <Compile Include="view\userControl\UcAddCustomer.cs">
       <SubType>UserControl</SubType>
@@ -141,6 +149,12 @@
     </Compile>
     <Compile Include="view\userControl\UcAlquilarForm.Designer.cs">
       <DependentUpon>UcAlquilarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\userControl\UcCustomerDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\userControl\UcCustomerDetails.Designer.cs">
+      <DependentUpon>UcCustomerDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="view\userControl\UcItemEquipo.cs">
       <SubType>UserControl</SubType>
@@ -194,6 +208,9 @@
     <Compile Include="view\userControl\UcSearchCustomer.Designer.cs">
       <DependentUpon>UcSearchCustomer.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="view\forms\ItemDetailForm.resx">
+      <DependentUpon>ItemDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\userControl\UcAddCustomer.resx">
       <DependentUpon>UcAddCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -205,6 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view\userControl\UcAlquilarForm.resx">
       <DependentUpon>UcAlquilarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\userControl\UcCustomerDetails.resx">
+      <DependentUpon>UcCustomerDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\userControl\UcItemEquipo.resx">
       <DependentUpon>UcItemEquipo.cs</DependentUpon>
