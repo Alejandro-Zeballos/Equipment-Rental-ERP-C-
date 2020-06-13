@@ -32,6 +32,12 @@ namespace Tools_Renting_System_Information.view.forms
                 case Customer customer:
                     userControl = new UcCustomerDetails(customer);
                     break;
+                case RentedEquipo rentedEquipo:
+                    userControl = new UcEquipoRentedDetail(rentedEquipo);
+                    break;
+                case Equipo equipo:
+                    userControl = new UcEquipoDetail(equipo);
+                    break;
             }
 
             this.panel.Controls.Add(userControl);

@@ -21,8 +21,9 @@ namespace Tools_Renting_System_Information.model
         public static string getCurrentDateTime()
         {
             //TODO: desarrollar this part
-            DateTime d = new DateTime();
+            DateTime d = DateTime.Now;
             string date = d.ToString("yyyy/MM/dd HH:mm:ss");
+            Console.WriteLine($"current date: {date}");
             return date;
         }
 
@@ -90,6 +91,30 @@ namespace Tools_Renting_System_Information.model
         {
             EquipoDAO equipoDAO = new MySqlEquipoDAO();
             equiposGlobal = equipoDAO.getEquiposList();
+        }
+
+        public static Type getTypeOfEnum(string type)
+        {
+            switch (type)
+            {
+                case "CONTADOR":
+                case "IMPUESTOS":
+                    return typeof(EgresoAdministrativo);
+                case "ALQUILER":
+                case "LUZ":
+                case "INTERNET":
+                case "SUELDO":
+                    return typeof(enums.egresos.EgresoFijo);
+                case "GASOLINA":
+                case "TARJETA":
+                case "ALMUERZO":
+                case "PASAJES":
+                case "OTRO":
+                    return typeof(enums.egresos.EgresoOperativo);
+                default:
+                    return typeof(enums.egresos.EgresoOperativo);
+            }
+
         }
         public static Customer currentCustomer { get; set; }
         public static User CurrentUser { get; set; }

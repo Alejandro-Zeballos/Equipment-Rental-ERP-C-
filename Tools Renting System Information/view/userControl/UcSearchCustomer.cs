@@ -11,6 +11,7 @@ using Tools_Renting_System_Information.presenter;
 using Tools_Renting_System_Information.model;
 using Tools_Renting_System_Information.view.forms;
 using MySqlX.XDevAPI;
+using Tools_Renting_System_Information.model.userControl;
 
 namespace Tools_Renting_System_Information.view.userControl
 {
@@ -77,6 +78,19 @@ namespace Tools_Renting_System_Information.view.userControl
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             ((MainForm)ParentForm).DisplayUserControl(UcAddCustomer.Instance);
+        }
+
+        private void dataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Customer customer = (Customer)dataGrid.CurrentRow.DataBoundItem;
+            Form form = new ItemDetailForm<Customer>(ref customer);
+            form.Show();
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            
+            ((MainForm)ParentForm).DisplayUserControl(UcHome.Instance);
         }
     }
 }

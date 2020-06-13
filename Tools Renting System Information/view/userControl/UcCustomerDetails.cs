@@ -63,5 +63,26 @@ namespace Tools_Renting_System_Information.view.userControl
         {
             ((ItemDetailForm<Customer>)ParentForm).Dispose();
         }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            Form form = new ItemEditForm<Customer>(ref customer);
+            form.Show();
+            
+        }
+
+        private void dataGridAlquileres_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            RentedEquipo rentedEquipo = (RentedEquipo)dataGridAlquileres.CurrentRow.DataBoundItem;
+            Form form = new ItemDetailForm<RentedEquipo>(ref rentedEquipo);
+            form.Show();
+        }
+
+        private void dataGridToReturn_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            RentedEquipo rentedEquipo = (RentedEquipo)dataGridAlquileres.CurrentRow.DataBoundItem;
+            Form form = new ItemDetailForm<RentedEquipo>(ref rentedEquipo);
+            form.Show();
+        }
     }
 }

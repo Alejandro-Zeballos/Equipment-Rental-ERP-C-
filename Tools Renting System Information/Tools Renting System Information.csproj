@@ -42,6 +42,7 @@
     <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="MySql.Data, Version=8.0.19.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.Grid.Base, Version=18.1460.0.54, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <HintPath>..\packages\Syncfusion.Grid.Base.18.1.0.54\lib\net46\Syncfusion.Grid.Base.dll</HintPath>
@@ -86,9 +87,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="model\database\DAOInterfaces\EgresosDAO.cs" />
+    <Compile Include="model\database\DAOInterfaces\InvestorActivityDAO.cs" />
+    <Compile Include="model\database\DAOInterfaces\InvestorDAO.cs" />
     <Compile Include="model\database\DAOInterfaces\SucursalDAO.cs" />
+    <Compile Include="model\database\DAOs\MySqlEgresosDAO.cs" />
+    <Compile Include="model\database\DAOs\MySqlInvestorActivityDao.cs" />
+    <Compile Include="model\database\DAOs\MySqlInvestorDAO.cs" />
     <Compile Include="model\database\DAOs\MySqlSUcursalDAO.cs" />
+    <Compile Include="model\enums\Activity.cs" />
+    <Compile Include="model\enums\egresos\Egresos.cs" />
+    <Compile Include="model\enums\egresos\EgresoFijo.cs" />
+    <Compile Include="model\enums\egresos\EgresoOperativo.cs" />
     <Compile Include="model\enums\eSucursal.cs" />
+    <Compile Include="model\enums\egresos\EgresoAdministrativo.cs" />
     <Compile Include="model\pocos\Customer.cs" />
     <Compile Include="model\database\DAOInterfaces\CustomerDAO.cs" />
     <Compile Include="model\database\DAOs\MySqlCustomerDAO.cs" />
@@ -103,7 +115,10 @@
     <Compile Include="model\enums\Access.cs" />
     <Compile Include="model\enums\eTypeEquipo.cs" />
     <Compile Include="model\enums\Month.cs" />
+    <Compile Include="model\pocos\Egreso.cs" />
     <Compile Include="model\pocos\Equipo.cs" />
+    <Compile Include="model\pocos\Investor.cs" />
+    <Compile Include="model\pocos\InvestorActivity.cs" />
     <Compile Include="model\pocos\RentedEquipo.cs" />
     <Compile Include="model\pocos\Sales.cs" />
     <Compile Include="model\pocos\Sucursal.cs" />
@@ -113,19 +128,93 @@
     <Compile Include="presenter\AlquilarEquipoPresenter.cs" />
     <Compile Include="presenter\AlquilarFormPresenter.cs" />
     <Compile Include="presenter\CustomerDetailsPresenter.cs" />
+    <Compile Include="presenter\EditCustomerPresenter.cs" />
+    <Compile Include="presenter\EditEquipoPresenter.cs" />
+    <Compile Include="presenter\EquipoDetailPresenter.cs" />
+    <Compile Include="presenter\EquipoListPresenter.cs" />
+    <Compile Include="presenter\InsertEgresoPresenter.cs" />
+    <Compile Include="presenter\InvestorsPresenter.cs" />
     <Compile Include="presenter\SearchCustomerPresenter.cs" />
+    <Compile Include="view\forms\ItemEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\forms\ItemEditForm.Designer.cs">
+      <DependentUpon>ItemEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\forms\ItemDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="view\forms\ItemDetailForm.Designer.cs">
       <DependentUpon>ItemDetailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\IUcAlquilarForm.cs" />
-    <Compile Include="view\IUcAddEquipo.cs" />
-    <Compile Include="view\IUcAgregarCliente.cs" />
-    <Compile Include="view\IUcAlquilarEquipo.cs" />
-    <Compile Include="view\IUcCustomerDetails.cs" />
-    <Compile Include="view\IUcSearchCustomer.cs" />
+    <Compile Include="view\forms\ReportsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\forms\ReportsForm.Designer.cs">
+      <DependentUpon>ReportsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\userControl\UcEditCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\userControl\UcEditCustomer.Designer.cs">
+      <DependentUpon>UcEditCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\userControl\UcEditEquipo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\userControl\UcEditEquipo.Designer.cs">
+      <DependentUpon>UcEditEquipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\userControl\UcEquipoDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\userControl\UcEquipoDetail.Designer.cs">
+      <DependentUpon>UcEquipoDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\userControl\UcEquipoList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\userControl\UcEquipoList.Designer.cs">
+      <DependentUpon>UcEquipoList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\userControl\UcEquipoRentedDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\userControl\UcEquipoRentedDetail.Designer.cs">
+      <DependentUpon>UcEquipoRentedDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\userControl\UcIngresoEgreso\IUcIngresoEgreso.cs" />
+    <Compile Include="view\userControl\UcIngresoEgreso\UcIngresoEgreso.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\userControl\UcIngresoEgreso\UcIngresoEgreso.Designer.cs">
+      <DependentUpon>UcIngresoEgreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\userControl\UcIngresoEgreso\UcIngresoEgresoPresenter.cs" />
+    <Compile Include="view\userControl\UcInsertEgreso.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\userControl\UcInsertEgreso.Designer.cs">
+      <DependentUpon>UcInsertEgreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\userControl\UcInvestors.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\userControl\UcInvestors.Designer.cs">
+      <DependentUpon>UcInvestors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\viewsInterface\IUcAlquilarForm.cs" />
+    <Compile Include="view\viewsInterface\IUcAddEquipo.cs" />
+    <Compile Include="view\viewsInterface\IUcAgregarCliente.cs" />
+    <Compile Include="view\viewsInterface\IUcAlquilarEquipo.cs" />
+    <Compile Include="view\viewsInterface\IUcCustomerDetails.cs" />
+    <Compile Include="view\viewsInterface\IUcEditarEquipo.cs" />
+    <Compile Include="view\viewsInterface\IUcEditCustomer.cs" />
+    <Compile Include="view\viewsInterface\IUcEquipoDetail.cs" />
+    <Compile Include="view\viewsInterface\IUcEquipoList.cs" />
+    <Compile Include="view\viewsInterface\IUcInsertEgreso.cs" />
+    <Compile Include="view\viewsInterface\IUcInvestors.cs" />
+    <Compile Include="view\viewsInterface\IUcSearchCustomer.cs" />
     <Compile Include="view\userControl\UcAddCustomer.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -199,17 +288,23 @@
     <Compile Include="view\forms\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\ILogin.cs" />
-    <Compile Include="view\IRegister.cs" />
-    <Compile Include="view\IUcHome.cs" />
+    <Compile Include="view\viewsInterface\ILogin.cs" />
+    <Compile Include="view\viewsInterface\IRegister.cs" />
+    <Compile Include="view\viewsInterface\IUcHome.cs" />
     <Compile Include="view\userControl\UcSearchCustomer.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="view\userControl\UcSearchCustomer.Designer.cs">
       <DependentUpon>UcSearchCustomer.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="view\forms\ItemEditForm.resx">
+      <DependentUpon>ItemEditForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\forms\ItemDetailForm.resx">
       <DependentUpon>ItemDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\forms\ReportsForm.resx">
+      <DependentUpon>ReportsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\userControl\UcAddCustomer.resx">
       <DependentUpon>UcAddCustomer.cs</DependentUpon>
@@ -225,6 +320,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view\userControl\UcCustomerDetails.resx">
       <DependentUpon>UcCustomerDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\userControl\UcEditCustomer.resx">
+      <DependentUpon>UcEditCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\userControl\UcEditEquipo.resx">
+      <DependentUpon>UcEditEquipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\userControl\UcEquipoDetail.resx">
+      <DependentUpon>UcEquipoDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\userControl\UcEquipoRentedDetail.resx">
+      <DependentUpon>UcEquipoRentedDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\userControl\UcIngresoEgreso\UcIngresoEgreso.resx">
+      <DependentUpon>UcIngresoEgreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\userControl\UcInsertEgreso.resx">
+      <DependentUpon>UcInsertEgreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\userControl\UcInvestors.resx">
+      <DependentUpon>UcInvestors.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\userControl\UcItemEquipo.resx">
       <DependentUpon>UcItemEquipo.cs</DependentUpon>
@@ -252,6 +368,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view\forms\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\userControl\UcEquipoList.resx">
+      <DependentUpon>UcEquipoList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\userControl\UcSearchCustomer.resx">
       <DependentUpon>UcSearchCustomer.cs</DependentUpon>

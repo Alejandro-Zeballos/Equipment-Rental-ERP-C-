@@ -20,6 +20,7 @@ namespace Tools_Renting_System_Information
             this.TopLevel = true;
             InitializeComponent();
             presenter = new LoginPresenter(this);
+            
         }
 
         public void close()
@@ -33,12 +34,12 @@ namespace Tools_Renting_System_Information
 
         public string getPassword()
         {
-            return textBoxPass.Text;
+            return "ale";
         }
 
         public string getUsername()
         {
-            return textBoxEmail.Text;
+            return "ale@gmail.com";
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)

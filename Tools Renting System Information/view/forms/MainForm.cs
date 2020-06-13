@@ -18,7 +18,7 @@ using Tools_Renting_System_Information.view.userControl;
 
 namespace Tools_Renting_System_Information.view.forms
 {
-    public partial class MainForm : MetroFramework.Forms.MetroForm
+    public partial class MainForm : Form
     {
 
         public MainForm()
@@ -85,6 +85,21 @@ namespace Tools_Renting_System_Information.view.forms
         private void buttonBuscarCliente_Click(object sender, EventArgs e)
         {
             DisplayUserControl(UcSearchCustomer.Instance);
+        }
+
+        private void listarEquiposToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DisplayUserControl(UcEquipoList.Instance);
+        }
+
+        private void buttonEgreso_Click(object sender, EventArgs e)
+        {
+            DisplayUserControl(UcInsertEgreso.Instance);
+        }
+
+        private void inversoresToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            DisplayUserControl(UcInvestors.Instance);
         }
     }
 }

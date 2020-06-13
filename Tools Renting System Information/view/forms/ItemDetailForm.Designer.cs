@@ -30,20 +30,18 @@
         {
             this.panel = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel
             // 
-            this.panel.Controls.Add(this.button1);
             this.panel.Location = new System.Drawing.Point(12, 12);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(585, 457);
+            this.panel.Size = new System.Drawing.Size(815, 457);
             this.panel.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(469, 408);
+            this.button1.Location = new System.Drawing.Point(692, 408);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(113, 46);
             this.button1.TabIndex = 0;
@@ -55,11 +53,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(609, 481);
+            this.ClientSize = new System.Drawing.Size(839, 481);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel);
             this.Name = "ItemDetailForm";
             this.Text = "ItemDetailForm";
-            this.panel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

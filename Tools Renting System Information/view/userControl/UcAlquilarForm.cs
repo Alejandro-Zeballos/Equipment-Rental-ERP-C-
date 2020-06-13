@@ -40,6 +40,7 @@ namespace Tools_Renting_System_Information.view.userControl
             InitializeComponent();
             this.presenter = new AlquilarFormPresenter(this);
             this.perHour = true;
+           
         }
 
         public void setTypeEquipo(string type)
@@ -124,6 +125,7 @@ namespace Tools_Renting_System_Information.view.userControl
                 
         }
 
+
         private bool areInputsValid()
         {
             bool inputsAreValid = true;
@@ -135,6 +137,13 @@ namespace Tools_Renting_System_Information.view.userControl
                 inputsAreValid = false;
 
             return inputsAreValid;
+        }
+
+        private void dataGrid_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            Equipo equipo = (Equipo)dataGrid.CurrentRow.DataBoundItem;
+            Form form = new ItemDetailForm<Equipo>(ref equipo);
+            form.Show();
         }
     }
 }

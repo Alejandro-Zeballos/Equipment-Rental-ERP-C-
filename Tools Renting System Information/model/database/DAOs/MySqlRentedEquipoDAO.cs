@@ -72,6 +72,28 @@ namespace Tools_Renting_System_Information.model.database
             return rentedEquipoList;
         }
 
+        public List<RentedEquipo> getRentedEquipoList(Equipo equipo)
+        {
+            List<RentedEquipo> rentedEquipoList = new List<RentedEquipo>();
+
+            DataSource dataSource = DataSource.instance;
+            string query = "SELECT * FROM items_rented " +
+                            $"WHERE id_item = '{equipo.id}' " +
+                            "AND is_returned = '1';";
+
+            MySqlDataReader data = dataSource.select(query);
+
+            while (data.Read())
+            {
+                RentedEquipo rentedEquipo = getRentedEquipo(data);
+                rentedEquipoList.Add(rentedEquipo);
+            }
+            if (data != null)
+                data.Close();
+
+            return rentedEquipoList;
+        }
+
         public List<RentedEquipo> getToReturnList()
         {
             List<RentedEquipo> rentedEquipoList = new List<RentedEquipo>();

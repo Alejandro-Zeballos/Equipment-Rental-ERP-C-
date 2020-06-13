@@ -36,7 +36,6 @@
             this.reporteParaInversoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.equiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarEquipoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editarEquipoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listarEquiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inversoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonHome = new System.Windows.Forms.Button();
@@ -44,6 +43,7 @@
             this.buttonBuscarCliente = new System.Windows.Forms.Button();
             this.buttonAgregarCliente = new System.Windows.Forms.Button();
             this.buttonEgreso = new System.Windows.Forms.Button();
+            this.verInversoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.container.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -100,7 +100,6 @@
             // 
             this.equiposToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.agregarEquipoToolStripMenuItem,
-            this.editarEquipoToolStripMenuItem,
             this.listarEquiposToolStripMenuItem});
             this.equiposToolStripMenuItem.Name = "equiposToolStripMenuItem";
             this.equiposToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
@@ -109,27 +108,25 @@
             // agregarEquipoToolStripMenuItem
             // 
             this.agregarEquipoToolStripMenuItem.Name = "agregarEquipoToolStripMenuItem";
-            this.agregarEquipoToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.agregarEquipoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.agregarEquipoToolStripMenuItem.Text = "Agregar Equipo";
             this.agregarEquipoToolStripMenuItem.Click += new System.EventHandler(this.agregarEquipoToolStripMenuItem_Click);
-            // 
-            // editarEquipoToolStripMenuItem
-            // 
-            this.editarEquipoToolStripMenuItem.Name = "editarEquipoToolStripMenuItem";
-            this.editarEquipoToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.editarEquipoToolStripMenuItem.Text = "Editar Equipo";
             // 
             // listarEquiposToolStripMenuItem
             // 
             this.listarEquiposToolStripMenuItem.Name = "listarEquiposToolStripMenuItem";
-            this.listarEquiposToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.listarEquiposToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listarEquiposToolStripMenuItem.Text = "Listar Equipos";
+            this.listarEquiposToolStripMenuItem.Click += new System.EventHandler(this.listarEquiposToolStripMenuItem_Click);
             // 
             // inversoresToolStripMenuItem1
             // 
+            this.inversoresToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.verInversoresToolStripMenuItem});
             this.inversoresToolStripMenuItem1.Name = "inversoresToolStripMenuItem1";
             this.inversoresToolStripMenuItem1.Size = new System.Drawing.Size(72, 20);
             this.inversoresToolStripMenuItem1.Text = "Inversores";
+            this.inversoresToolStripMenuItem1.Click += new System.EventHandler(this.inversoresToolStripMenuItem1_Click);
             // 
             // buttonHome
             // 
@@ -179,6 +176,13 @@
             this.buttonEgreso.TabIndex = 6;
             this.buttonEgreso.Text = "Egreso";
             this.buttonEgreso.UseVisualStyleBackColor = true;
+            this.buttonEgreso.Click += new System.EventHandler(this.buttonEgreso_Click);
+            // 
+            // verInversoresToolStripMenuItem
+            // 
+            this.verInversoresToolStripMenuItem.Name = "verInversoresToolStripMenuItem";
+            this.verInversoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verInversoresToolStripMenuItem.Text = "Ver Inversores";
             // 
             // MainForm
             // 
@@ -217,8 +221,8 @@
         private System.Windows.Forms.ToolStripMenuItem reporteParaInversoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem equiposToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarEquipoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editarEquipoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listarEquiposToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inversoresToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem verInversoresToolStripMenuItem;
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tools_Renting_System_Information.model;
+using Tools_Renting_System_Information.model.pocos;
 
 namespace Tools_Renting_System_Information
 {

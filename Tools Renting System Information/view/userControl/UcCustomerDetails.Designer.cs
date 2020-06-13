@@ -107,6 +107,7 @@
             // 
             this.textBoxName.Location = new System.Drawing.Point(177, 76);
             this.textBoxName.Name = "textBoxName";
+            this.textBoxName.ReadOnly = true;
             this.textBoxName.Size = new System.Drawing.Size(184, 20);
             this.textBoxName.TabIndex = 6;
             // 
@@ -114,6 +115,7 @@
             // 
             this.textBoxEmail.Location = new System.Drawing.Point(177, 106);
             this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.ReadOnly = true;
             this.textBoxEmail.Size = new System.Drawing.Size(184, 20);
             this.textBoxEmail.TabIndex = 7;
             // 
@@ -121,6 +123,7 @@
             // 
             this.textBoxCarnet.Location = new System.Drawing.Point(177, 132);
             this.textBoxCarnet.Name = "textBoxCarnet";
+            this.textBoxCarnet.ReadOnly = true;
             this.textBoxCarnet.Size = new System.Drawing.Size(184, 20);
             this.textBoxCarnet.TabIndex = 8;
             // 
@@ -128,6 +131,7 @@
             // 
             this.textBoxAddress.Location = new System.Drawing.Point(177, 158);
             this.textBoxAddress.Name = "textBoxAddress";
+            this.textBoxAddress.ReadOnly = true;
             this.textBoxAddress.Size = new System.Drawing.Size(184, 20);
             this.textBoxAddress.TabIndex = 9;
             // 
@@ -135,6 +139,7 @@
             // 
             this.textBoxPhone.Location = new System.Drawing.Point(177, 187);
             this.textBoxPhone.Name = "textBoxPhone";
+            this.textBoxPhone.ReadOnly = true;
             this.textBoxPhone.Size = new System.Drawing.Size(184, 20);
             this.textBoxPhone.TabIndex = 10;
             // 
@@ -154,7 +159,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(156, 13);
             this.label8.TabIndex = 12;
-            this.label8.Text = "Equipos Pendientes de Alquilar:";
+            this.label8.Text = "Equipos pendientes a devolver:";
             // 
             // buttonSelect
             // 
@@ -174,6 +179,7 @@
             this.buttonEdit.TabIndex = 16;
             this.buttonEdit.Text = "Editar Cliente";
             this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // dataGridAlquileres
             // 
@@ -189,6 +195,7 @@
             this.dataGridAlquileres.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridAlquileres.Size = new System.Drawing.Size(258, 122);
             this.dataGridAlquileres.TabIndex = 17;
+            this.dataGridAlquileres.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridAlquileres_CellDoubleClick);
             // 
             // dataGridToReturn
             // 
@@ -204,6 +211,7 @@
             this.dataGridToReturn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridToReturn.Size = new System.Drawing.Size(258, 122);
             this.dataGridToReturn.TabIndex = 18;
+            this.dataGridToReturn.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridToReturn_CellDoubleClick);
             // 
             // UcCustomerDetails
             // 

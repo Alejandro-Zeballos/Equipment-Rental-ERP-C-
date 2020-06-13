@@ -31,5 +31,10 @@ namespace Tools_Renting_System_Information.model
             this.idBranch = idBranch;
             isAvailable = true;
         }
+
+        public override string ToString()
+        {
+            return $"{this.type.ToString()} Modelo: {model} Descripcion: {description}";
+        }
     }
 }

@@ -130,6 +130,7 @@
             this.dataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGrid.Size = new System.Drawing.Size(640, 146);
             this.dataGrid.TabIndex = 13;
+            this.dataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellDoubleClick_1);
             // 
             // label1
             // 
@@ -293,6 +294,8 @@
             // 
             // datePicker
             // 
+            this.datePicker.CustomFormat = "dddd dd/MM/yyyy HH:mm:ss";
+            this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.datePicker.Location = new System.Drawing.Point(214, 411);
             this.datePicker.Name = "datePicker";
             this.datePicker.Size = new System.Drawing.Size(200, 20);

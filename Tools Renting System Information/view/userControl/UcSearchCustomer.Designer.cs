@@ -112,6 +112,7 @@
             this.buttonCancel.TabIndex = 9;
             this.buttonCancel.Text = "Cancelar";
             this.buttonCancel.UseSelectable = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // buttonSelect
             // 
@@ -138,6 +139,7 @@
             this.dataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGrid.Size = new System.Drawing.Size(640, 146);
             this.dataGrid.TabIndex = 12;
+            this.dataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellDoubleClick);
             // 
             // UcSearchCustomer
             // 
